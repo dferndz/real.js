@@ -1,7 +1,5 @@
 import WebSocket from "ws";
-import { ICallback, IEventHandler } from "./types";
-
-type WSClientEvent = "close" | "error" | "message" | "open";
+import { ICallback, IEventHandler, IClientEvent } from "./types";
 
 export class RealTimeClient<IPayload> {
   url: string;
@@ -55,7 +53,7 @@ export class RealTimeClient<IPayload> {
     this.initWSClient();
   }
 
-  on(event: WSClientEvent, callback: any) {
+  on(event: IClientEvent, callback: any) {
     this.WSClient.addEventListener(event, callback);
   }
 }
