@@ -65,9 +65,9 @@
 
           <h3>Contents</h3>
           {% assign docs = site.doc_pages | sort: "number" %}
-          <li><a href="/{{site.baseurl}}">Home</a></li>
+          <li><a href="{{site.url}}{{site.baseurl}}/">Home</a></li>
           {% for doc in docs %}
-          <li><a href="{{doc.url}}">{{doc.title}}</a></li>
+          <li><a href="{{site.baseurl}}{{doc.url}}">{{doc.title}}</a></li>
           {% endfor %}
         </aside>
       </div>

@@ -1,30 +1,63 @@
 ---
 layout: page
-title: "Built-in server events"
-number: 3
+title: "Creating the server"
+number: 2
 ---
 
-## Listening for built-in events
-
-`Server.on(event: IServerEvent, callback)`
+## Initialize a server on port 8082:
 
 ```
-IServerEvent {
-  "close"
-  "error"
-  "message"
-  "listening"
-  "connection"
-  "headers";
-}
+const realjs = require("real.js");
+
+const Server = new realjs.RealTimeServer({ port: 8082 });
+
+Server.on("connection", () => console.log("New client"));
 ```
 
-Example:
+## Send a `message` event to a new client
+
+You can send any dictionary with primitive types to the client.
 
 ```
-Server.on("listening", () => console.log("Server is listening..."));
-
 Server.on("connection", client => {
-  console.log(`New client ${client.id}`);
-})
+
+  // send message to new client
+
+  Server.publish(client, "message", {
+    myCustomAction: "new_user",
+    message: "New user connected"
+  });
+
+});
+```
+
+## Send a `message` event to all connected clients
+
+```
+Server.on("connection", client => {
+
+  // send message to all clients
+
+  Server.publishAll("message", {
+    myCustomAction: "new_user",
+    message: "New user connected"
+  });
+
+});
+```
+
+## Events are user-defined
+
+We can send a `newUser` event on a new connection
+
+```
+Server.on("connection", client => {
+
+  // send message to all clients
+
+  Server.publishAll("newUser", {
+    detail: "New user connected"
+  });
+
+});
 ```

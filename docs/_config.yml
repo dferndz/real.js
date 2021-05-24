@@ -1,7 +1,7 @@
 # Setup
 name: Real.js
 tagline: "Real time server and client"
-baseurl: ""
+baseurl: "/real.js"
 locale: "en"
 github:
   repo: "Real.js"
