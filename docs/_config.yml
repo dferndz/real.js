@@ -1,1 +1,23 @@
-theme: jekyll-theme-architect
+# Setup
+name: Real.js
+tagline: "Real time server and client"
+baseurl: ""
+locale: "en"
+github:
+  repo: "Real.js"
+  url: "https://github.com/dferndz/real.js"
+  user:
+    username: "dferndz"
+    url: "https://github.com/dferndz"
+
+collections:
+  doc_pages:
+    output: true
+    sort_by: number
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
