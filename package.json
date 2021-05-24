@@ -19,6 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/dferndz/real.js.git"
   },
+  "homepage": "https://dferndz.github.io/real.js/",
   "license": "MIT",
   "dependencies": {
     "@types/node-uuid": "0.0.28",
