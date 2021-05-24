@@ -1,0 +1,27 @@
+{
+  "name": "real.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "client": "nodemon --watch src/client --watch src/testClient.ts src/testClient.ts",
+    "server": "nodemon --watch src/server --watch src/testServer.ts src/testServer.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build"
+  },
+  "author": "Daniel Fernandez",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-uuid": "0.0.28",
+    "@types/ws": "^7.4.4",
+    "node-uuid": "^1.4.8",
+    "typescript": "^4.2.4",
+    "ws": "^7.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^15.6.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1"
+  }
+}
